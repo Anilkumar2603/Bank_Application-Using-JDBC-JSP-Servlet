@@ -1,0 +1,215 @@
+/* style.css */
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: url('https://media.licdn.com/dms/image/D5612AQHZbnxf_vAqtg/article-cover_image-shrink_720_1280/0/1684958850351?e=1726099200&v=beta&t=detD4aw_IBIlFA-b6tAYq2wZDBxbd4f7-FLiHvBWSEA');
+  background-size: cover;
+  background-position: center;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  perspective: 1000px;
+  margin: 40px auto;
+  width: 400px;
+  height: 500px;
+  text-align: center;
+  padding-bottom: 50px;
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.8s;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(90, 34, 139, 0.3);
+  margin: 0 auto;
+}
+
+.front, .back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  padding: 20px;
+  border-radius: 10px;
+  background-size: cover;
+  background-position: center;
+}
+
+.front {
+  z-index: 2;
+  transform: rotateY(0deg);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.front h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.front form {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.front label {
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  align-self: flex-start;
+  margin-bottom: 5px;
+}
+
+.front input[type="text"], .front input[type="password"] {
+  width: 100%;
+  height: 30px;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+  background-color: rgba(0, 0, 0, 0.3);
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  outline: none;
+}
+
+.front input[type="text"]::placeholder, .front input[type="password"]::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.front button[type="submit"] {
+  width: 100%;
+  height: 40px;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.front button[type="submit"]:hover {
+  background-color: #3e8e41;
+}
+
+.front .register-link {
+  font-size: 16px;
+  color: #0080ff;
+  text-decoration: none;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.front .register-link:hover {
+  color: #000000;
+}
+
+.back {
+  transform: rotateY(180deg);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.back h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.back form {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.back label {
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  align-self: flex-start;
+  margin-bottom: 5px;
+}
+
+.back input[type="text"], .back input[type="password"] {
+  width: 100%;
+  height: 30px;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+  background-color: rgba(0, 0, 0, 0.3);
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  outline: none;
+}
+
+.back input[type="text"]::placeholder, .back input[type="password"]::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.back button[type="submit"] {
+  width: 100%;
+  height: 40px;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.back button[type="submit"]:hover {
+  background-color: #3e8e41;
+}
+
+.back .login-link {
+  font-size: 16px;
+  color: #0080ff;
+  text-decoration: none;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.back .login-link:hover {
+  color: #000000;
+}
+
+.card.flipped {
+  transform: rotateY(180deg);
+}
+
+.card.flipped.front {
+  transform: rotateY(180deg);
+}
+
+.card.flipped.back {
+  transform: rotateY(0deg);
+  z-index: 2;
+}
